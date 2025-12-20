@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>社团历史 - 崇南大学登山社</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .timeline {
+            border-left: 2px solid #000;
+            margin-left: 20px;
+            padding-left: 20px;
+        }
+        .timeline-item {
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -26px;
+            top: 5px;
+            width: 10px;
+            height: 10px;
+            background: #000;
+            border-radius: 50%;
+        }
+        .year {
+            font-weight: bold;
+            font-size: 16px;
+            background: #eee;
+            padding: 2px 5px;
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+        .redacted {
+            background-color: #000;
+            color: #000;
+            user-select: none;
+        }
+        .redacted:hover {
+            color: #cc0000; /* Reveal on hover */
+            cursor: help;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="assets/images/School_Emblem.png" alt="校徽" style="vertical-align: middle; height: 50px;">
+            <h1 style="display: inline; vertical-align: middle;">崇南大学登山社</h1>
+            <div style="font-size: 12px; margin-top: 5px;">Chongnan Mountaineering Club (CMC)</div>
+        </header>
+
+        <div class="main-layout">
+            <aside class="sidebar">
+                <h3>导航栏</h3>
+                <ul>
+                    <li><a href="index.html">社团首页</a></li>
+                    <li><a href="members.html">队员档案</a></li>
+                    <li><a href="history.html" style="font-weight: bold;">社团历史</a></li>
+                    <li><a href="gallery.html">活动相册</a></li>
+                </ul>
+            </aside>
+
+            <main class="content">
+                <h2 style="border-bottom: 1px solid #ccc; padding-bottom: 5px;">社团发展大事记</h2>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="year">1998</div>
+                        <p>崇南大学登山社正式成立。首任社长王建国带领 5 名队员成功登顶太白山。</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="year">2005</div>
+                        <p>社团规模突破百人。获评“全国优秀大学生社团”。</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="year">2010</div>
+                        <p>成功组织“极地挑战”科考活动，带回珍贵地质样本。</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="year">2014 (7月)</div>
+                        <p>启动“未名峰”夏季科考计划。队长林远山带队出发。</p>
+                        <p style="color: red; font-size: 12px;">[系统注：此条目最后更新于 2014-07-12]</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="year">2014 (8月)</div>
+                        <p class="redacted">搜救工作于8月15日正式停止。未发现生还者。社团活动无限期暂停。</p>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 40px;">历任社长</h3>
+                <table border="1" cellpadding="5" style="width: 100%; border-collapse: collapse;">
+                    <tr>
+                        <th>届数</th>
+                        <th>姓名</th>
+                        <th>备注</th>
+                    </tr>
+                    <tr>
+                        <td>第一届</td>
+                        <td>王建国</td>
+                        <td>创社社长</td>
+                    </tr>
+                    <tr>
+                        <td>...</td>
+                        <td>...</td>
+                        <td>...</td>
+                    </tr>
+                    <tr>
+                        <td>第十六届 (2014)</td>
+                        <td>林远山</td>
+                        <td><span style="font-family: monospace;">STATUS: MISSING</span></td>
+                    </tr>
+                </table>
+
+            </main>
+        </div>
+
+        <footer>
+            Copyright &copy; 2014 CMU-Club. All Rights Reserved.
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,180 @@
+/* Global Styles - Web 1.0 Retro Vibe */
+body {
+    background-color: #f4f1ea; /* Paper color */
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjZjRmMWVhIi8+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNjY2MiIG9wYWNpdHk9IjAuNSIvPgo8L3N2Zz4='); /* Simple noise pattern */
+    color: #000;
+    font-family: "SimSun", "Songti SC", serif;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.container {
+    width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    border: 1px solid #999;
+    padding: 10px;
+    box-shadow: 5px 5px 0px #ccc;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    text-align: center;
+    border-bottom: 2px solid #000;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+h1 {
+    font-size: 24px;
+    margin: 10px 0;
+    letter-spacing: 2px;
+}
+
+/* Layout */
+.main-layout {
+    display: flex;
+}
+
+.sidebar {
+    width: 200px;
+    border-right: 1px dashed #999;
+    padding-right: 10px;
+    margin-right: 10px;
+}
+
+.content {
+    flex: 1;
+}
+
+/* Sidebar Links */
+.sidebar ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+.sidebar a {
+    color: #0000EE;
+    text-decoration: underline;
+}
+
+.sidebar a:visited {
+    color: #551A8B;
+}
+
+/* Notice */
+.notice {
+    border: 2px solid red;
+    padding: 10px;
+    background-color: #fff0f0;
+    margin-bottom: 20px;
+    color: red;
+    font-weight: bold;
+}
+
+.notice-meta {
+    font-size: 12px;
+    color: #666;
+    margin-top: 5px;
+    font-weight: normal;
+    text-align: right;
+}
+
+/* Team Photo */
+.photo-container {
+    text-align: center;
+    margin: 20px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.team-photo {
+    width: 100%;
+    max-width: 500px;
+    border: 5px solid #fff;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    transition: all 0.1s;
+}
+
+/* Footer */
+footer {
+    margin-top: 50px;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+}
+
+.hidden-text {
+    color: #f4f1ea; /* Same as body bg */
+    user-select: all; /* Make it easy to select */
+}
+
+.hidden-text::selection {
+    background: #ff0000;
+    color: #fff;
+}
+
+/* Glitch Effect Classes */
+.glitch-active {
+    animation: glitch-anim 0.3s infinite;
+    filter: invert(1) hue-rotate(180deg);
+}
+
+@keyframes glitch-anim {
+    0% { transform: translate(0) }
+    20% { transform: translate(-2px, 2px) }
+    40% { transform: translate(-2px, -2px) }
+    60% { transform: translate(2px, 2px) }
+    80% { transform: translate(2px, -2px) }
+    100% { transform: translate(0) }
+}
+
+/* Member Cards */
+.member-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.member-card {
+    border: 1px solid #999;
+    padding: 10px;
+    width: 100%;
+    background: #fff;
+    display: flex;
+    align-items: flex-start;
+}
+
+.member-photo {
+    width: 100px;
+    height: 120px;
+    background-color: #ddd;
+    margin-right: 15px;
+    border: 1px solid #000;
+    flex-shrink: 0;
+    transition: background-image 0.1s;
+    background-size: cover;
+    background-position: center;
+}
+
+.member-info h4 {
+    margin: 0 0 5px 0;
+    font-size: 16px;
+}
+
+.member-info p {
+    margin: 0;
+    font-size: 12px;
+    color: #444;
+}
+
+.corrupted {
+    font-family: "Courier New", monospace;
+    color: #cc0000;
+}

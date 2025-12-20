@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>崇南大学登山社 - 队员档案</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+             <img src="assets/images/School_Emblem.png" alt="校徽" style="vertical-align: middle; height: 50px;">
+            <h1 style="display: inline; vertical-align: middle;">崇南大学登山社</h1>
+            <div style="font-size: 12px; margin-top: 5px;">Chongnan Mountaineering Club (CMC)</div>
+        </header>
+
+        <div class="main-layout">
+            <aside class="sidebar">
+                <h3>导航栏</h3>
+                <ul>
+                    <li><a href="index.html">社团首页</a></li>
+                    <li><a href="members.html" style="font-weight: bold;">队员档案</a></li>
+                    <li><a href="#">社团历史</a></li>
+                    <li><a href="#">活动相册</a></li>
+                </ul>
+            </aside>
+
+            <main class="content">
+                <h2 style="border-bottom: 1px solid #ccc; padding-bottom: 5px;">2014暑期科考队成员名单</h2>
+                
+                <div class="member-list">
+                    <!-- Captain -->
+                    <div class="member-card">
+                        <!-- Use a data URI for the normal face, and JS will swap it -->
+                        <div class="member-photo" id="captainPhoto" style="background-color: #eee;">
+                            <!-- Simple SVG face as background placeholder, or maybe just empty -->
+                            <svg id="captainNormal" width="100%" height="100%" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="50" cy="40" r="25" fill="#ccc"/>
+                                <rect x="25" y="70" width="50" height="50" fill="#888"/>
+                                <text x="50" y="110" font-size="10" text-anchor="middle" fill="#fff">No Photo</text>
+                            </svg>
+                        </div>
+                        <div class="member-info">
+                            <h4>林远山 (Captain)</h4>
+                            <p><strong>职责：</strong> 领队、导航</p>
+                            <p><strong>简介：</strong> 三年级生，拥有丰富的雪山攀登经验。曾带队登顶玉龙雪山。</p>
+                        </div>
+                    </div>
+
+                    <!-- Member 2 -->
+                    <div class="member-card">
+                         <div class="member-photo" style="background-color: #eee;">
+                            <svg width="100%" height="100%" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="50" cy="40" r="25" fill="#ccc"/>
+                                <rect x="25" y="70" width="50" height="50" fill="#888"/>
+                            </svg>
+                        </div>
+                        <div class="member-info">
+                            <h4>苏静 (Recorder)</h4>
+                            <p><strong>职责：</strong> 摄影、医疗</p>
+                            <p><strong>简介：</strong> “记忆可能会骗人，但镜头不会。”</p>
+                        </div>
+                    </div>
+
+                    <!-- Member 3 -->
+                    <div class="member-card">
+                         <div class="member-photo" style="background-color: #eee;">
+                            <svg width="100%" height="100%" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="50" cy="40" r="25" fill="#ccc"/>
+                                <rect x="25" y="70" width="50" height="50" fill="#888"/>
+                            </svg>
+                        </div>
+                        <div class="member-info">
+                            <h4>张浩</h4>
+                            <p><strong>职责：</strong> 后勤、通讯</p>
+                            <p><strong>简介：</strong> 负责设备维护和营地搭建。</p>
+                        </div>
+                    </div>
+
+                    <!-- Member 4 -->
+                    <div class="member-card">
+                         <div class="member-photo" style="background-color: #eee;">
+                            <svg width="100%" height="100%" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="50" cy="40" r="25" fill="#ccc"/>
+                                <rect x="25" y="70" width="50" height="50" fill="#888"/>
+                            </svg>
+                        </div>
+                        <div class="member-info">
+                            <h4>李明</h4>
+                            <p><strong>职责：</strong> 气象观测</p>
+                            <p><strong>简介：</strong> 地质系大二学生。</p>
+                        </div>
+                    </div>
+
+                    <!-- Member 5 (Corrupted) -->
+                    <div class="member-card" style="border-color: red; background-color: #fff0f0;">
+                         <div class="member-photo" style="background-color: #000;">
+                            <!-- Static noise SVG -->
+                            <svg width="100%" height="100%" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="100" height="120" fill="black"/>
+                                <text x="10" y="60" font-family="Courier" fill="red" font-size="12">ERR</text>
+                            </svg>
+                        </div>
+                        <div class="member-info corrupted">
+                            <h4>[数据损坏]</h4>
+                            <p><strong>职责：</strong> [数据损坏]</p>
+                            <p><strong>简介：</strong> <span style="background: black; color: black;">DO NOT LOOK FOR HIM</span></p>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+
+        <footer>
+            Copyright &copy; 2014 CMU-Club. All Rights Reserved.
+        </footer>
+    </div>
+
+    <script src="js/members.js"></script>
+</body>
+</html>

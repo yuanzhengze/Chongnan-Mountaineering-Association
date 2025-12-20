@@ -1,0 +1,56 @@
+body {
+    background-color: #000;
+    color: #00ff00;
+    font-family: "Courier New", monospace;
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+.log-container {
+    max-width: 800px;
+    margin: 0 auto;
+    border-left: 2px solid #00ff00;
+    padding-left: 20px;
+}
+
+.log-entry {
+    margin-bottom: 40px;
+    border-bottom: 1px dashed #004400;
+    padding-bottom: 20px;
+}
+
+.log-meta {
+    color: #008800;
+    margin-bottom: 10px;
+}
+
+.broken-text {
+    display: inline-block;
+    transform: rotate(1deg);
+    opacity: 0.8;
+}
+
+a {
+    color: #00ff00;
+    text-decoration: underline;
+}
+
+a:hover {
+    background-color: #00ff00;
+    color: #000;
+}
+
+/* Scanline effect */
+body::before {
+    content: " ";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    z-index: 2;
+    background-size: 100% 2px, 3px 100%;
+    pointer-events: none;
+}

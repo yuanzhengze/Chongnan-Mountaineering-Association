@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>活动相册 - 崇南大学登山社</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .gallery {
+            column-count: 2;
+            column-gap: 15px;
+        }
+        .gallery-item {
+            break-inside: avoid;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            padding: 5px;
+            background: #fff;
+            transition: transform 0.2s;
+            cursor: pointer;
+        }
+        .gallery-item:hover {
+            transform: scale(1.02);
+            border-color: #000;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .caption {
+            font-size: 12px;
+            color: #666;
+            margin-top: 5px;
+            text-align: center;
+        }
+        
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            border: 5px solid #fff;
+        }
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="assets/images/School_Emblem.png" alt="校徽" style="vertical-align: middle; height: 50px;">
+            <h1 style="display: inline; vertical-align: middle;">崇南大学登山社</h1>
+            <div style="font-size: 12px; margin-top: 5px;">Chongnan Mountaineering Club (CMC)</div>
+        </header>
+
+        <div class="main-layout">
+            <aside class="sidebar">
+                <h3>导航栏</h3>
+                <ul>
+                    <li><a href="index.html">社团首页</a></li>
+                    <li><a href="members.html">队员档案</a></li>
+                    <li><a href="history.html">社团历史</a></li>
+                    <li><a href="gallery.html" style="font-weight: bold;">活动相册</a></li>
+                </ul>
+            </aside>
+
+            <main class="content">
+                <h2 style="border-bottom: 1px solid #ccc; padding-bottom: 5px;">活动剪影</h2>
+                
+                <div class="gallery">
+                    <div class="gallery-item" onclick="openModal(this)">
+                        <img src="assets/images/team_photo_2014.png" alt="出发前合影">
+                        <div class="caption">2014.07.12 出发前合影</div>
+                    </div>
+                    
+                    <div class="gallery-item" onclick="openModal(this)">
+                         <!-- Placeholder for nature shot -->
+                        <div style="width: 100%; height: 150px; background: #ddd; display: flex; align-items: center; justify-content: center; color: #888;">[Image: Camp.jpg]</div>
+                        <div class="caption">2014.07.13 一号营地</div>
+                    </div>
+
+                    <div class="gallery-item" onclick="openModal(this)">
+                         <!-- Placeholder -->
+                        <div style="width: 100%; height: 200px; background: #ccc; display: flex; align-items: center; justify-content: center; color: #888;">[Image: Summit_View.jpg]</div>
+                        <div class="caption">2013.10 玉龙雪山顶峰</div>
+                    </div>
+
+                    <div class="gallery-item" onclick="openModal(this)">
+                         <!-- The Anomalous Image -->
+                        <img src="assets/images/map_sketch.png" alt="手绘地图" style="filter: invert(1);">
+                        <div class="caption">2014.07.18 发现的奇怪图腾</div>
+                    </div>
+                    
+                    <div class="gallery-item" onclick="alert('文件损坏');">
+                         <div style="width: 100%; height: 120px; background: #000; display: flex; align-items: center; justify-content: center; color: red; font-family: monospace;">FILE CORRUPTED</div>
+                        <div class="caption">2014.07.20 ???</div>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+
+        <footer>
+            Copyright &copy; 2014 CMU-Club. All Rights Reserved.
+        </footer>
+    </div>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption" style="color: #fff; text-align: center; margin-top: 10px;"></div>
+    </div>
+
+    <script>
+        function openModal(element) {
+            const modal = document.getElementById("myModal");
+            const modalImg = document.getElementById("img01");
+            const captionText = document.getElementById("caption");
+            
+            // Get image src
+            const img = element.querySelector('img');
+            if(img) {
+                modal.style.display = "flex";
+                modalImg.src = img.src;
+                captionText.innerHTML = element.querySelector('.caption').innerHTML;
+            }
+        }
+
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+    </script>
+</body>
+</html>

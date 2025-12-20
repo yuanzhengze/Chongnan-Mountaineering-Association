@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>崇南大学登山社 - 首页</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="assets/images/School_Emblem.png" alt="校徽" style="vertical-align: middle; height: 50px;">
+            <h1 style="display: inline; vertical-align: middle;">崇南大学登山社</h1>
+            <div style="font-size: 12px; margin-top: 5px;">Chongnan Mountaineering Club (CMC)</div>
+        </header>
+
+        <div class="main-layout">
+            <aside class="sidebar">
+                <h3>导航栏</h3>
+                <ul>
+                    <li><a href="index.html">社团首页</a></li>
+                    <li><a href="members.html">队员档案</a></li>
+                    <li><a href="history.html">社团历史</a></li>
+                    <li><a href="gallery.html">活动相册</a></li>
+                </ul>
+
+                <h3>友情链接</h3>
+                <ul>
+                    <li><a href="university.html">崇南大学官网</a></li>
+                    <li><a href="cma.html">中国登山协会</a></li>
+                    <li><a href="weather.html">未名峰气象站</a></li>
+                </ul>
+
+                <div style="margin-top: 30px; text-align: center;">
+                    <p>联系我们</p>
+                    <a href="mailto:contact@cmc.edu">📧 Email</a>
+                </div>
+                
+                <div style="margin-top: 20px; border: 1px inset #ccc; padding: 5px; text-align: center;">
+                    你是第 <span id="counter" style="color: red;">1024</span> 位访客
+                </div>
+            </aside>
+
+            <main class="content">
+                <div class="notice">
+                    【重要通知】关于暂停2014年暑期登山活动的说明<br><br>
+                    鉴于近期哀牢山余脉气候异常及不可抗力因素，校团委决定即日起暂停登山社一切野外考察活动。<br>
+                    原定于7月12日的“未名峰”科考队请立即归档数据并停止更新。<br>
+                    <div class="notice-meta">发布时间：2014-07-20 | 管理员：Admin</div>
+                </div>
+
+                <div class="welcome-text">
+                    <p>欢迎来到崇南大学登山社！</p>
+                    <p>“我们要去的地方，没有路；我们要见的山，在云端。”</p>
+                </div>
+
+                <div class="photo-container" id="photoContainer">
+                    <!-- Team Photo -->
+                    <div style="position: relative; display: inline-block; width: 100%; max-width: 500px;">
+                        <img src="assets/images/team_photo_2014.png" class="team-photo" id="teamPhoto" alt="2014 Team Photo" style="display: block;">
+                        <img src="assets/images/team_photo_2014_withface.png" class="team-photo" id="teamPhotoGlitch" alt="Hidden Truth" style="display: block; position: absolute; top: 0; left: 0; opacity: 0; pointer-events: none;">
+                    </div>
+                    
+                    <div class="face-overlay" id="faceOverlay"></div>
+                    <div style="text-align: right; font-size: 10px; color: #666; margin-top: 5px; width: 100%; max-width: 500px; margin-left: auto; margin-right: auto;">IMG_20140715.JPG</div>
+                </div>
+
+                <p style="font-size: 12px; color: #666; margin-top: 20px;">
+                    社团简介：崇南大学登山社成立于1998年，致力于推广登山运动与野外生存技能...
+                </p>
+            </main>
+        </div>
+
+        <footer>
+            Copyright &copy; 2014 CMU-Club. All Rights Reserved. 
+            <span class="hidden-text">系统提示：服务器连接不稳定，检测到来自 IP [127.0.0.1] 的异常访问。救救我。</span>
+        </footer>
+    </div>
+
+    <script src="js/index.js"></script>
+</body>
+</html>

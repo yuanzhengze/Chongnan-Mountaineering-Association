@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html>
+<head>
+<title>403 Forbidden</title>
+<style>
+    body { font-family: serif; color: #000; background-color: #fff; margin: 20px; }
+    h1 { font-size: 24px; font-weight: bold; }
+    address { font-style: italic; font-size: 14px; margin-top: 20px; border-top: 1px solid #ccc; padding-top: 10px;}
+    .hidden-input-container {
+        margin-top: 50px;
+        text-align: center;
+        opacity: 0.1; /* Almost invisible */
+        transition: opacity 0.5s;
+    }
+    .hidden-input-container:hover {
+        opacity: 1;
+    }
+    input {
+        border: 1px solid #000;
+        padding: 5px;
+        font-family: monospace;
+    }
+</style>
+</head>
+<body>
+<h1>Forbidden</h1>
+<p>You don't have permission to access /private_logs/ on this server.</p>
+<hr>
+<address>Apache/2.4.7 (Ubuntu) Server at www.chongnan-climb.edu Port 80</address>
+
+<div class="hidden-input-container">
+    <label for="pwd">身份验证:</label>
+    <input type="text" id="pwd" autocomplete="off">
+</div>
+
+<script src="js/admin.js"></script>
+</body>
+</html>
