@@ -1,27 +1,24 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const captainPhoto = document.getElementById('captainPhoto');
-    
-    // Normal Photo SVG (Encoded) - Kept as backup/default state
-    const normalSVG = `
-        <svg id="captainNormal" width="100%" height="100%" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="50" cy="40" r="25" fill="#ccc"/>
-            <rect x="25" y="70" width="50" height="50" fill="#888"/>
-            <text x="50" y="110" font-size="10" text-anchor="middle" fill="#fff">No Photo</text>
-        </svg>
-    `;
+    // Select all member images with the class 'member-img'
+    const memberImages = document.querySelectorAll('.member-img');
 
-    // Creepy Photo Image
-    const creepyImage = `<img src="assets/images/broken_face_male.png" style="width:100%; height:100%; object-fit:cover;">`;
+    memberImages.forEach(img => {
+        const normalSrc = img.getAttribute('data-normal');
+        const hoverSrc = img.getAttribute('data-hover');
+        // Store the initial filter value to restore it later
+        const originalFilter = img.style.filter; 
 
-    // Hover Effect
-    captainPhoto.addEventListener('mouseenter', () => {
-        captainPhoto.innerHTML = creepyImage;
-        captainPhoto.style.filter = "contrast(150%) brightness(0.8)";
-    });
+        if (normalSrc && hoverSrc) {
+            img.addEventListener('mouseenter', () => {
+                img.src = hoverSrc;
+                img.style.filter = "contrast(150%) brightness(0.8)";
+            });
 
-    captainPhoto.addEventListener('mouseleave', () => {
-        captainPhoto.innerHTML = normalSVG;
-        captainPhoto.style.filter = "none";
+            img.addEventListener('mouseleave', () => {
+                img.src = normalSrc;
+                img.style.filter = originalFilter; // Restore original filter
+            });
+        }
     });
 
     // Console Logs
