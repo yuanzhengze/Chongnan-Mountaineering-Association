@@ -1,0 +1,14 @@
+{
+  "name": "trae-heckathon-arg",
+  "version": "2.0.0",
+  "description": "ARG Project: Frozen Coordinates",
+  "main": "index.html",
+  "scripts": {
+    "test": "jest",
+    "start": "http-server ."
+  },
+  "devDependencies": {
+    "jest": "^29.0.0",
+    "jsdom": "^20.0.0"
+  }
+}

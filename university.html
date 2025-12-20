@@ -1,76 +1,110 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>崇南大学 - Chongnan University</title>
-    <link rel="stylesheet" href="css/modern.css">
-</head>
-<body class="modern-body">
+    <link rel="stylesheet" href="css/modern.css" />
+  </head>
+  <body class="modern-body">
     <header class="modern-header">
-        <div class="modern-container modern-nav">
-            <div style="display: flex; align-items: center; gap: 10px;">
-                <img src="assets/images/School_Emblem.png" alt="Logo" style="height: 40px; filter: brightness(0) invert(1);">
-                <span style="font-size: 1.5rem; font-weight: bold;">崇南大学</span>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#">首页</a></li>
-                    <li><a href="#">学校概况</a></li>
-                    <li><a href="#">学术科研</a></li>
-                    <li><a href="#">招生就业</a></li>
-                    <li><a href="#" onclick="alert('系统维护中'); return false;">学生社团</a></li>
-                </ul>
-            </nav>
+      <div class="modern-container modern-nav">
+        <div style="display: flex; align-items: center; gap: 10px">
+          <img
+            src="assets/images/School_Emblem.png"
+            alt="Logo"
+            style="height: 40px; filter: brightness(0) invert(1)"
+          />
+          <span style="font-size: 1.5rem; font-weight: bold">崇南大学</span>
         </div>
+        <nav>
+          <ul>
+            <li><a href="#">首页</a></li>
+            <li><a href="#">学校概况</a></li>
+            <li><a href="#">学术科研</a></li>
+            <li><a href="#">招生就业</a></li>
+            <li><a href="#" onclick="handleClubClick(event)">学生社团</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
     <section class="hero-section">
-        <div class="modern-container">
-            <h1>厚德博学 笃行致远</h1>
-            <p>Celebrating 100 Years of Excellence (1925 - 2025)</p>
-        </div>
+      <div class="modern-container">
+        <h1>厚德博学 笃行致远</h1>
+        <p>Celebrating 100 Years of Excellence (1925 - 2025)</p>
+      </div>
     </section>
 
     <section class="news-section">
-        <div class="modern-container">
-            <h2 style="text-align: center; color: var(--primary-color);">校园新闻</h2>
-            <div class="news-grid">
-                <div class="news-card">
-                    <span class="news-date">2025-12-19</span>
-                    <div class="news-title">我校在国际生物多样性大会上发表重要演讲</div>
-                    <p>崇南大学生命科学学院教授团队...</p>
-                </div>
-                <div class="news-card">
-                    <span class="news-date">2025-12-15</span>
-                    <div class="news-title">关于寒假期间实验室安全管理的通知</div>
-                    <p>各学院需严格排查安全隐患，特别是化学品仓库...</p>
-                </div>
-                <div class="news-card">
-                    <span class="news-date">2014-07-25</span> <!-- Old news buried -->
-                    <div class="news-title" style="color: #666;">[归档] 关于永久封存未名峰区域的通知</div>
-                    <p>接上级部门通知，因地质灾害风险，未名峰及周边区域即日起列为禁区，严禁任何师生进入。</p>
-                </div>
+      <div class="modern-container">
+        <h2 style="text-align: center; color: var(--primary-color)">
+          校园新闻
+        </h2>
+        <div class="news-grid">
+          <div class="news-card">
+            <span class="news-date">2025-12-19</span>
+            <div class="news-title">我校在国际生物多样性大会上发表重要演讲</div>
+            <p>崇南大学生命科学学院教授团队...</p>
+          </div>
+          <div class="news-card">
+            <span class="news-date">2025-12-15</span>
+            <div class="news-title">关于寒假期间实验室安全管理的通知</div>
+            <p>各学院需严格排查安全隐患，特别是化学品仓库...</p>
+          </div>
+          <div class="news-card">
+            <span class="news-date">2014-07-25</span>
+            <!-- Old news buried -->
+            <div class="news-title" style="color: #666">
+              [归档] 关于永久封存未名峰区域的通知
             </div>
+            <p>
+              接上级部门通知，因地质灾害风险，未名峰及周边区域即日起列为禁区，严禁任何师生进入。
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
-    <div class="modern-container" style="padding: 50px 0; text-align: center;">
-        <h3>快速链接</h3>
-        <div style="display: flex; justify-content: center; gap: 20px; margin-top: 20px;">
-            <a href="cma.html" style="color: var(--primary-color);">中国登山协会合作专栏</a>
-            <a href="weather.html" style="color: var(--primary-color);">未名峰气象监测站</a>
-            <a href="#" style="color: #999; text-decoration: line-through; cursor: not-allowed;" title="该链接已失效">校登山社主页</a>
-        </div>
+    <div class="modern-container" style="padding: 50px 0; text-align: center">
+      <h3>快速链接</h3>
+      <div
+        style="
+          display: flex;
+          justify-content: center;
+          gap: 20px;
+          margin-top: 20px;
+        "
+      >
+        <a href="cma.html" style="color: var(--primary-color)"
+          >中国登山协会合作专栏</a
+        >
+        <a href="weather.html" style="color: var(--primary-color)"
+          >未名峰气象监测站</a
+        >
+        <a
+          href="#"
+          style="
+            color: #999;
+            text-decoration: line-through;
+            cursor: not-allowed;
+          "
+          title="该链接已失效"
+          >校登山社主页</a
+        >
+      </div>
     </div>
 
     <footer class="footer-modern">
-        <div class="modern-container">
-            <p>Copyright © 2025 Chongnan University. All Rights Reserved.</p>
-            <p>地址：崇南市大学路1号 | 电话：010-12345678</p>
-            <!-- Hidden back door to the old site -->
-            <a href="index.html" class="secret-link">Archived Site: CMC_Legacy_2014</a>
-        </div>
+      <div class="modern-container">
+        <p>Copyright © 2025 Chongnan University. All Rights Reserved.</p>
+        <p>地址：崇南市大学路1号 | 电话：010-12345678</p>
+        <!-- Hidden back door to the old site -->
+        <a href="index.html" class="secret-link"
+          >Archived Site: CMC_Legacy_2014</a
+        >
+      </div>
     </footer>
-</body>
+    <script src="js/university.js"></script>
+  </body>
 </html>

@@ -1,29 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Set Dynamic Date
-    const now = new Date();
-    const dateStr = now.toISOString().split('T')[0];
-    document.getElementById('current-date').innerText = dateStr;
+    // Audio Generation (White Noise + Beeps)
+    // Only run if audio-status element exists
+    const audioStatus = document.getElementById('audio-status');
+    if (!audioStatus) return;
 
-    // 2. Typing Effect
-    const textToType = "(此条目正在实时输入...) \n你能看到这行字吗？\n如果你能看到，说明窗口期打开了。\n这里的雪是热的。\n我们没有死，我们只是... \n走不出这个网页。";
-    const typingContainer = document.getElementById('typing-text');
-    let i = 0;
-
-    function typeWriter() {
-        if (i < textToType.length) {
-            typingContainer.innerText += textToType.charAt(i);
-            i++;
-            setTimeout(typeWriter, Math.random() * 100 + 50); // Random typing speed
-        } else {
-            // After typing, start audio
-            initAudio();
-        }
-    }
-
-    // Start typing after a short delay
-    setTimeout(typeWriter, 1000);
-
-    // 3. Audio Generation (White Noise + Beeps)
     function initAudio() {
         try {
             const AudioContext = window.AudioContext || window.webkitAudioContext;
@@ -55,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
             gainNode.connect(audioCtx.destination);
 
             noise.start();
-            document.getElementById('audio-status').innerText = "Audio Driver: ACTIVE (Wind.mp3)";
+            audioStatus.innerText = "Audio Driver: ACTIVE (Wind.mp3)";
             
             // Morse Code Beeps (Simulated)
             setInterval(() => {
@@ -76,11 +56,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
         } catch (e) {
             console.log("Audio failed to initialize (interaction required likely):", e);
-            document.getElementById('audio-status').innerText = "Audio Driver: ERROR (Click page to retry)";
+            audioStatus.innerText = "Audio Driver: ERROR (Click page to retry)";
             
             document.body.addEventListener('click', () => {
                  initAudio();
             }, { once: true });
         }
     }
+
+    // Auto-init audio after delay
+    setTimeout(initAudio, 2000);
 });

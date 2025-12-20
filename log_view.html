@@ -7,32 +7,11 @@
 </head>
 <body>
     <div class="log-container">
-        <h1>[INTERNAL LOGS - LEVEL 5]</h1>
-        <div id="audio-status" style="color: #444; font-size: 10px;">Audio Driver: Initializing...</div>
-        
-        <div class="log-entry">
-            <div class="log-meta">Entry #07 [2014-07-19]</div>
-            <p>我们决定下撤了。雾太大，指南针失灵了。小张说他看见了营地，但那里只有悬崖。</p>
-        </div>
-
-        <div class="log-entry">
-            <div class="log-meta">Entry #08 [2014-07-20]</div>
-            <p class="broken-text">不要相信地图。地图是活的。</p>
-            <div style="margin-top: 10px; border: 1px solid #004400; display: inline-block;">
-                <img src="assets/images/map_sketch.png" alt="Map Sketch" style="max-width: 100%; height: auto; opacity: 0.7; filter: grayscale(100%) sepia(100%) hue-rotate(90deg) brightness(0.8);">
-            </div>
-        </div>
-
-        <div class="log-entry" id="entry-future">
-            <div class="log-meta">Entry #09 [<span id="current-date">Loading...</span>]</div>
-            <p id="typing-text"></p>
-        </div>
-        
-        <div style="margin-top: 100px; font-size: 10px; color: #222;">
-            <a href="escape.html" id="escape-link">Return to Index</a>
-        </div>
+        <!-- Content will be rendered by JS -->
     </div>
 
+    <script src="js/log_data.js"></script>
+    <script src="js/log_renderer.js"></script>
     <script src="js/logs.js"></script>
 </body>
 </html>
