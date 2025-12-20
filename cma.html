@@ -1,143 +1,190 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>中国登山协会 - 合作伙伴</title>
     <style>
-        body {
-            font-family: "Microsoft YaHei", sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-            color: #333;
-        }
-        .header {
-            background-color: #aa0000;
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-        }
-        .container {
-            width: 900px;
-            margin: 30px auto;
-            background: white;
-            padding: 40px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        h2 {
-            border-left: 5px solid #aa0000;
-            padding-left: 10px;
-            margin-bottom: 20px;
-        }
-        .doc-box {
-            border: 1px solid #ddd;
-            padding: 20px;
-            background: #fafafa;
-            margin-top: 20px;
-        }
-        .watermark {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) rotate(-45deg);
-            font-size: 100px;
-            color: rgba(0,0,0,0.03);
-            pointer-events: none;
-            z-index: 0;
-        }
+      body {
+        font-family: "Microsoft YaHei", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+        color: #333;
+      }
+      .header {
+        background-color: #aa0000;
+        color: white;
+        padding: 20px 0;
+        text-align: center;
+      }
+      .container {
+        width: 900px;
+        margin: 30px auto;
+        background: white;
+        padding: 40px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h2 {
+        border-left: 5px solid #aa0000;
+        padding-left: 10px;
+        margin-bottom: 20px;
+      }
+      .doc-box {
+        border: 1px solid #ddd;
+        padding: 20px;
+        background: #fafafa;
+        margin-top: 20px;
+      }
+      .watermark {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+        font-size: 100px;
+        color: rgba(0, 0, 0, 0.03);
+        pointer-events: none;
+        z-index: 0;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="watermark">INTERNAL USE ONLY</div>
-    
+
     <div class="header">
-        <h1>中国登山协会 (CMA)</h1>
-        <p>China Mountaineering Association</p>
-        <div style="margin-top: 40px;">
-            <h2>案件归档 (Case Archive)</h2>
-            <div class="pdf-container">
-                <div class="pdf-toolbar">
-                    <div>
-                        <strong>崇南省山地灾害应急救援总队 · 案件结案报告.pdf</strong>
-                        <span id="file-size" style="color: #666; font-size: 12px; margin-left: 10px;">(Loading size...)</span>
-                    </div>
-                    <button class="btn-download" onclick="downloadPDF()">
-                        <span>📥 下载原件</span>
-                    </button>
-                </div>
-                
-                <div class="progress-bar-container" id="dl-progress">
-                    <div class="progress-bar" id="dl-bar"></div>
-                </div>
-
-                <!-- PDF Preview iframe -->
-                <iframe src="assets/崇南省山地灾害应急救援总队 · 案件结案报告.pdf" class="pdf-frame" title="PDF Preview"></iframe>
+      <h1>中国登山协会 (CMA)</h1>
+      <p>China Mountaineering Association</p>
+      <!-- Hidden PDF Archive (Revealed after success) -->
+      <div id="case-archive-section" style="margin-top: 40px; display: none">
+        <h2>案件归档 (Case Archive)</h2>
+        <div class="pdf-container">
+          <div class="pdf-toolbar">
+            <div>
+              <strong>崇南省山地灾害应急救援总队 · 案件结案报告.pdf</strong>
+              <span
+                id="file-size"
+                style="color: #666; font-size: 12px; margin-left: 10px"
+                >(Loading size...)</span
+              >
             </div>
-        </div>
+            <button class="btn-download" onclick="downloadPDF()">
+              <span>📥 下载原件</span>
+            </button>
+          </div>
 
-        <!-- Hidden Terminal -->
-        <div id="terminal-container" style="display: none; margin-top: 40px; text-align: left;">
-            <h2>搜救数据校准终端 (Rescue Calibration)</h2>
-            <div class="doc-box" style="background: #eef; border: 1px solid #99a;">
-                <p>请输入搜救目标推算坐标或指令：</p>
-                <div style="display: flex; gap: 10px;">
-                    <input type="text" id="rescue-input" placeholder="Example: FROM [lat, lon] TO [lat, lon] DISTANCE 100m" style="flex: 1; padding: 10px; font-family: monospace;">
-                    <button onclick="checkCoordinates()" style="padding: 10px 20px; background: #aa0000; color: white; border: none; cursor: pointer;">CALCULATE</button>
-                </div>
-                <div id="rescue-result" style="margin-top: 10px;"></div>
-            </div>
-        </div>
+          <div class="progress-bar-container" id="dl-progress">
+            <div class="progress-bar" id="dl-bar"></div>
+          </div>
 
+          <!-- PDF Preview iframe -->
+          <iframe
+            src="assets/崇南省山地灾害应急救援总队 · 案件结案报告.pdf"
+            class="pdf-frame"
+            title="PDF Preview"
+          ></iframe>
+        </div>
+      </div>
+
+      <!-- Hidden Terminal -->
+      <div
+        id="terminal-container"
+        style="display: none; margin-top: 40px; text-align: left"
+      >
+        <h2>搜救数据校准终端 (Rescue Calibration)</h2>
+        <div class="doc-box" style="background: #eef; border: 1px solid #99a">
+          <p>请输入搜救目标推算坐标或指令：</p>
+          <div style="display: flex; gap: 10px">
+            <input
+              type="text"
+              id="rescue-input"
+              placeholder="Example: FROM [lat, lon] TO [lat, lon] DISTANCE 100m"
+              style="flex: 1; padding: 10px; font-family: monospace"
+            />
+            <button
+              onclick="checkCoordinates()"
+              style="
+                padding: 10px 20px;
+                background: #aa0000;
+                color: white;
+                border: none;
+                cursor: pointer;
+              "
+            >
+              CALCULATE
+            </button>
+          </div>
+          <div id="rescue-result" style="margin-top: 10px"></div>
+        </div>
+      </div>
     </div>
 
-    <footer class="cma-footer" id="contact-us-trigger" style="cursor: pointer;">
-        <div style="max-width: 900px; margin: 0 auto; display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap;">
-            <div>
-                <h3>联系我们 | Contact Us</h3>
-                <p>📍 地址：北京市东城区体育馆路9号</p>
-            </div>
-            <div style="text-align: left;">
-                <p>📞 电话：010-87182233</p>
-                <p>📧 Email: info@cma.gov.cn</p>
-            </div>
-            <div style="font-size: 12px; color: #666;">
-                &copy; 2014 China Mountaineering Association
-            </div>
+    <footer class="cma-footer" id="contact-us-trigger" style="cursor: pointer">
+      <div
+        style="
+          max-width: 900px;
+          margin: 0 auto;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          flex-wrap: wrap;
+        "
+      >
+        <div>
+          <h3>联系我们 | Contact Us</h3>
+          <p>📍 地址：北京市东城区体育馆路9号</p>
         </div>
+        <div style="text-align: left">
+          <p>📞 电话：010-87182233</p>
+          <p>📧 Email: info@cma.gov.cn</p>
+        </div>
+        <div style="font-size: 12px; color: #666">
+          &copy; 2014 China Mountaineering Association
+        </div>
+      </div>
     </footer>
 
     <div class="container">
-        <a href="university.html">&lt; 返回崇南大学官网</a>
-        
-        <div style="margin-top: 30px;">
-            <h2>战略合作伙伴：崇南大学</h2>
-            <p>中国登山协会与崇南大学保持着长期的友好合作关系，共同致力于高校登山人才的培养...</p>
-        </div>
+      <a href="university.html">&lt; 返回崇南大学官网</a>
 
-        <div style="margin-top: 40px;">
-            <h2>登山安全知识科普</h2>
-            <ul>
-                <li>高原反应的预防与急救</li>
-                <li>雪崩地形的识别</li>
-                <li>野外通讯设备的正确使用</li>
-            </ul>
-        </div>
+      <div style="margin-top: 30px">
+        <h2>战略合作伙伴：崇南大学</h2>
+        <p>
+          中国登山协会与崇南大学保持着长期的友好合作关系，共同致力于高校登山人才的培养...
+        </p>
+      </div>
 
-        <div style="margin-top: 40px;">
-            <h2>内部通报 (ARCHIVE 2014)</h2>
-            <div class="doc-box">
-                <h3 style="margin-top: 0; color: #aa0000;">关于暂停崇南大学登山社资质的决定</h3>
-                <p><strong>文件号：</strong>CMA-2014-089</p>
-                <p>鉴于崇南大学登山社在“未名峰”科考活动中严重违反安全规定，擅自进入未开发区域，并导致重大人员失踪事故，经协会研究决定：</p>
-                <ol>
-                    <li>即日起吊销崇南大学登山社的注册资质。</li>
-                    <li>对事故原因展开独立调查。初步调查显示，该队携带的 GPS 数据在 7月15日 出现逻辑无法解释的跳变。</li>
-                    <li>将未名峰周边 50 公里划为永久禁飞区。</li>
-                </ol>
-                <p style="text-align: right; margin-top: 20px;">中国登山协会安全委员会<br>2014年8月20日</p>
-            </div>
+      <div style="margin-top: 40px">
+        <h2>登山安全知识科普</h2>
+        <ul>
+          <li>高原反应的预防与急救</li>
+          <li>雪崩地形的识别</li>
+          <li>野外通讯设备的正确使用</li>
+        </ul>
+      </div>
+
+      <div style="margin-top: 40px">
+        <h2>内部通报 (ARCHIVE 2014)</h2>
+        <div class="doc-box">
+          <h3 style="margin-top: 0; color: #aa0000">
+            关于暂停崇南大学登山社资质的决定
+          </h3>
+          <p><strong>文件号：</strong>CMA-2014-089</p>
+          <p>
+            鉴于崇南大学登山社在“未名峰”科考活动中严重违反安全规定，擅自进入未开发区域，并导致重大人员失踪事故，经协会研究决定：
+          </p>
+          <ol>
+            <li>即日起吊销崇南大学登山社的注册资质。</li>
+            <li>
+              对事故原因展开独立调查。初步调查显示，该队携带的 GPS 数据在
+              7月15日 出现逻辑无法解释的跳变。
+            </li>
+            <li>将未名峰周边 50 公里划为永久禁飞区。</li>
+          </ol>
+          <p style="text-align: right; margin-top: 20px">
+            中国登山协会安全委员会<br />2014年8月20日
+          </p>
         </div>
+      </div>
     </div>
     <script src="js/rescue_terminal.js"></script>
-</body>
+  </body>
 </html>
