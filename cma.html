@@ -53,7 +53,58 @@
     <div class="header">
         <h1>中国登山协会 (CMA)</h1>
         <p>China Mountaineering Association</p>
+        <div style="margin-top: 40px;">
+            <h2>案件归档 (Case Archive)</h2>
+            <div class="pdf-container">
+                <div class="pdf-toolbar">
+                    <div>
+                        <strong>崇南省山地灾害应急救援总队 · 案件结案报告.pdf</strong>
+                        <span id="file-size" style="color: #666; font-size: 12px; margin-left: 10px;">(Loading size...)</span>
+                    </div>
+                    <button class="btn-download" onclick="downloadPDF()">
+                        <span>📥 下载原件</span>
+                    </button>
+                </div>
+                
+                <div class="progress-bar-container" id="dl-progress">
+                    <div class="progress-bar" id="dl-bar"></div>
+                </div>
+
+                <!-- PDF Preview iframe -->
+                <iframe src="assets/崇南省山地灾害应急救援总队 · 案件结案报告.pdf" class="pdf-frame" title="PDF Preview"></iframe>
+            </div>
+        </div>
+
+        <!-- Hidden Terminal -->
+        <div id="terminal-container" style="display: none; margin-top: 40px; text-align: left;">
+            <h2>搜救数据校准终端 (Rescue Calibration)</h2>
+            <div class="doc-box" style="background: #eef; border: 1px solid #99a;">
+                <p>请输入搜救目标推算坐标或指令：</p>
+                <div style="display: flex; gap: 10px;">
+                    <input type="text" id="rescue-input" placeholder="Example: FROM [lat, lon] TO [lat, lon] DISTANCE 100m" style="flex: 1; padding: 10px; font-family: monospace;">
+                    <button onclick="checkCoordinates()" style="padding: 10px 20px; background: #aa0000; color: white; border: none; cursor: pointer;">CALCULATE</button>
+                </div>
+                <div id="rescue-result" style="margin-top: 10px;"></div>
+            </div>
+        </div>
+
     </div>
+
+    <footer class="cma-footer" id="contact-us-trigger" style="cursor: pointer;">
+        <div style="max-width: 900px; margin: 0 auto; display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap;">
+            <div>
+                <h3>联系我们 | Contact Us</h3>
+                <p>📍 地址：北京市东城区体育馆路9号</p>
+            </div>
+            <div style="text-align: left;">
+                <p>📞 电话：010-87182233</p>
+                <p>📧 Email: info@cma.gov.cn</p>
+            </div>
+            <div style="font-size: 12px; color: #666;">
+                &copy; 2014 China Mountaineering Association
+            </div>
+        </div>
+    </footer>
 
     <div class="container">
         <a href="university.html">&lt; 返回崇南大学官网</a>

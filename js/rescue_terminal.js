@@ -1,3 +1,84 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const trigger = document.getElementById('contact-us-trigger');
+    const terminal = document.getElementById('terminal-container');
+    
+    let clickCount = 0;
+    
+    if (trigger && terminal) {
+        trigger.addEventListener('click', () => {
+            clickCount++;
+            
+            // Toggle visibility for better UX if they want to hide it back
+            if (terminal.style.display === 'none') {
+                 terminal.style.display = 'block';
+                 // Scroll to terminal
+                 terminal.scrollIntoView({ behavior: 'smooth' });
+                 document.getElementById('rescue-input').focus();
+            } else {
+                terminal.style.display = 'none';
+            }
+        });
+    }
+    
+    // PDF File Size Fetcher
+    fetchFileSize();
+});
+
+function fetchFileSize() {
+    const url = "assets/崇南省山地灾害应急救援总队 · 案件结案报告.pdf";
+    fetch(url, { method: 'HEAD' })
+        .then(response => {
+            if (response.ok) {
+                const size = response.headers.get("content-length");
+                if (size) {
+                    const sizeInMB = (size / (1024 * 1024)).toFixed(2);
+                    const sizeLabel = document.getElementById('file-size');
+                    if(sizeLabel) sizeLabel.innerText = `(${sizeInMB} MB)`;
+                }
+            }
+        })
+        .catch(err => console.log("File size fetch failed:", err));
+}
+
+function downloadPDF() {
+    const fileName = "崇南省山地灾害应急救援总队 · 案件结案报告.pdf";
+    const url = "assets/" + fileName;
+    
+    if (confirm(`即将下载文件：\n${fileName}\n\n确认下载？`)) {
+        const progressContainer = document.getElementById('dl-progress');
+        const progressBar = document.getElementById('dl-bar');
+        
+        if(progressContainer) progressContainer.style.display = 'block';
+        
+        // Simulate progress since we can't easily hook into native download progress for simple anchor clicks
+        // But for UX, we can use XHR/Fetch to blob then save
+        
+        let progress = 0;
+        const interval = setInterval(() => {
+            progress += Math.random() * 20;
+            if (progress > 100) progress = 100;
+            if (progressBar) progressBar.style.width = progress + "%";
+            
+            if (progress === 100) {
+                clearInterval(interval);
+                setTimeout(() => {
+                    // Trigger real download
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = fileName;
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    
+                    // Reset
+                    if(progressContainer) progressContainer.style.display = 'none';
+                    if(progressBar) progressBar.style.width = "0%";
+                }, 500);
+            }
+        }, 100);
+    }
+}
+
 function checkCoordinates() {
     const input = document.getElementById('rescue-input').value;
     const resultDiv = document.getElementById('rescue-result');
