@@ -10,8 +10,8 @@ Players act as digital detectives to uncover the truth behind the 2014 mountaine
 - **Logic**: Client-side logic for puzzles (URL hacking, Base64 decoding, Coordinate calculation).
 
 ## Project Structure
-- `index.html`: The 2014 legacy site (The Hub).
-- `university.html`: The modern university entrance (Redirects to legacy).
+- `archive.html`: The 2014 legacy site (The Hub).
+- `index.html`: The modern university entrance (Redirects to legacy).
 - `gallery.html`: Contains the hidden Clue #1 (Source Code Comment).
 - `log_view.html`: Contains Clue #2 & #3 (URL Hacking & Base64).
 - `cma.html`: The Finale (Rescue Terminal Input).
@@ -19,7 +19,7 @@ Players act as digital detectives to uncover the truth behind the 2014 mountaine
 - `css/`: Stylesheets.
 
 ## Setup & Run
-1. **Local**: Open `university.html` in a browser.
+1. **Local**: Open `index.html` in a browser.
 2. **Docker**:
    ```bash
    docker build -t arg-game .

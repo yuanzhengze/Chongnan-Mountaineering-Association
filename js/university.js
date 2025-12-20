@@ -12,6 +12,6 @@ function handleClubClick(event) {
     document.title = "404 Not Found";
     
     setTimeout(() => {
-        window.location.href = 'index.html';
+        window.location.href = 'archive.html';
     }, 2000);
 }

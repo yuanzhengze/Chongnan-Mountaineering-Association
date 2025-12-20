@@ -68,6 +68,6 @@ function renderLogList(container) {
     const footer = document.createElement('div');
     footer.style.marginTop = "100px";
     footer.style.fontSize = "10px";
-    footer.innerHTML = '<a href="index.html">Return to Index</a>';
+    footer.innerHTML = '<a href="archive.html">Return to Index</a>';
     container.appendChild(footer);
 }

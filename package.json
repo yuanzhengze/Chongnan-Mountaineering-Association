@@ -2,7 +2,7 @@
   "name": "trae-heckathon-arg",
   "version": "2.0.0",
   "description": "ARG Project: Frozen Coordinates",
-  "main": "index.html",
+  "main": "archive.html",
   "scripts": {
     "test": "jest",
     "start": "http-server ."
