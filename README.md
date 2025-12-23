@@ -1,7 +1,7 @@
 # ARG Project: Frozen Coordinates (v2.0)
 
 ## Overview
-This is an ARG (Alternate Reality Game) website for "Frozen Coordinates".
+This is an ARG (Alternate Reality Game) website for "Chongnan Mountaineering Associations".
 Players act as digital detectives to uncover the truth behind the 2014 mountaineering accident.
 
 ## Architecture
